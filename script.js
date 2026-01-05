@@ -1,4 +1,4 @@
-**
+/**
  * Portfolio Website JavaScript
  * Enhanced with smooth scrolling, form validation, animations, and interactivity
  */
