@@ -48,6 +48,14 @@
           <div class="hero-buttons">
             <a href="#projects" class="btn btn-primary smooth-scroll">View My Work</a>
             <a href="#contact" class="btn btn-secondary smooth-scroll">Get In Touch</a>
+            <button onclick="downloadCV(event)" class="btn btn-primary" style="margin-top: 10px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Download CV
+            </button>
           </div>
         </div>
         <div class="hero-image">
@@ -552,6 +560,18 @@
             <h3>Contact Information</h3>
             <p>Feel free to reach out through any of these channels:</p>
             
+            <!-- Download CV Button -->
+            <div style="margin: 20px 0;">
+              <button onclick="downloadCV(event)" class="btn btn-primary" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width: 20px; height: 20px;">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download CV (PDF)
+              </button>
+            </div>
+            
             <!-- Social Media Links -->
             <div class="social-links">
               <a href="mailto:hafiza.hinu@email.com" class="social-link" target="_blank" rel="noopener noreferrer">
@@ -669,6 +689,109 @@
           <line x1="6" y1="6" x2="18" y2="18"/>
         </svg>
       </button>
+    </div>
+  </div>
+
+  <!-- CV Template (Hidden) -->
+  <div id="cv-template" style="display: none; padding: 40px; font-family: 'Poppins', sans-serif; max-width: 800px; margin: 0 auto; background: white; color: #333;">
+    <div style="text-align: center; margin-bottom: 30px; border-bottom: 3px solid #0b63d0; padding-bottom: 20px;">
+      <h1 style="color: #0b63d0; margin: 0; font-size: 36px; font-weight: 700;">Hafiza Hydar Hinu</h1>
+      <p style="color: #64748b; margin: 10px 0; font-size: 18px; font-weight: 500;">Web Developer • Creative Designer • EdTech Specialist</p>
+      <div style="margin-top: 15px; font-size: 14px; color: #475569;">
+        <p style="margin: 5px 0;">📧 Email: hafiza.hinu@email.com</p>
+        <p style="margin: 5px 0;">🔗 GitHub: github.com/hafiza-hinu</p>
+        <p style="margin: 5px 0;">📱 Facebook: facebook.com/hafiza.hinu</p>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 25px;">
+      <h2 style="color: #0b63d0; font-size: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">About Me</h2>
+      <p style="line-height: 1.8; color: #475569; font-size: 14px;">
+        I'm an enthusiastic Web Developer and Creative Designer with a passion for education technology. 
+        I combine technical expertise with creative design to build engaging digital experiences. 
+        With over 5 years of experience in student teaching, I have developed strong skills in curriculum 
+        design, lesson planning, and student engagement.
+      </p>
+    </div>
+
+    <div style="margin-bottom: 25px;">
+      <h2 style="color: #0b63d0; font-size: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">Education</h2>
+      <div style="margin-bottom: 15px;">
+        <h3 style="color: #1e293b; font-size: 18px; margin: 10px 0 5px 0;">University</h3>
+        <p style="color: #64748b; font-size: 14px; margin: 0;">Pursuing higher education with focus on Computer Science and Technology</p>
+      </div>
+      <div style="margin-bottom: 15px;">
+        <h3 style="color: #1e293b; font-size: 18px; margin: 10px 0 5px 0;">Dhaka City College</h3>
+        <p style="color: #64748b; font-size: 14px; margin: 0;">Completed higher secondary education with outstanding results</p>
+      </div>
+      <div style="margin-bottom: 15px;">
+        <h3 style="color: #1e293b; font-size: 18px; margin: 10px 0 5px 0;">Monipur School</h3>
+        <p style="color: #64748b; font-size: 14px; margin: 0;">Completed secondary education with excellent academic performance</p>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 25px;">
+      <h2 style="color: #0b63d0; font-size: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">Skills & Expertise</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+        <div>
+          <p style="margin: 8px 0; color: #1e293b; font-weight: 600;">• HTML/CSS (95%)</p>
+          <p style="margin: 8px 0; color: #1e293b; font-weight: 600;">• JavaScript (85%)</p>
+          <p style="margin: 8px 0; color: #1e293b; font-weight: 600;">• Web Design (90%)</p>
+          <p style="margin: 8px 0; color: #1e293b; font-weight: 600;">• Flutter (75%)</p>
+        </div>
+        <div>
+          <p style="margin: 8px 0; color: #1e293b; font-weight: 600;">• Content Creation (88%)</p>
+          <p style="margin: 8px 0; color: #1e293b; font-weight: 600;">• Problem Solving (92%)</p>
+          <p style="margin: 8px 0; color: #1e293b; font-weight: 600;">• Dance (90%)</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 25px;">
+      <h2 style="color: #0b63d0; font-size: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">Experience</h2>
+      <div style="margin-bottom: 15px;">
+        <h3 style="color: #1e293b; font-size: 18px; margin: 10px 0 5px 0;">Student Teaching Experience</h3>
+        <p style="color: #64748b; font-size: 14px; margin: 0 0 5px 0; font-weight: 600;">5 Years of Experience</p>
+        <p style="color: #475569; font-size: 14px; line-height: 1.6; margin: 0;">
+          Developed strong skills in curriculum design, lesson planning, and student engagement. 
+          Focus on creating interactive and meaningful learning experiences.
+        </p>
+      </div>
+      <div style="margin-bottom: 15px;">
+        <h3 style="color: #1e293b; font-size: 18px; margin: 10px 0 5px 0;">Dance & Performance</h3>
+        <p style="color: #64748b; font-size: 14px; margin: 0 0 5px 0; font-weight: 600;">Extensive Experience</p>
+        <p style="color: #475569; font-size: 14px; line-height: 1.6; margin: 0;">
+          Passionate dancer with years of experience in both classical and modern dance forms. 
+          Skills in choreography, stage presence, and artistic expression.
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 25px;">
+      <h2 style="color: #0b63d0; font-size: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">Projects</h2>
+      <div style="margin-bottom: 12px;">
+        <h3 style="color: #1e293b; font-size: 16px; margin: 8px 0 3px 0;">Service Finder</h3>
+        <p style="color: #475569; font-size: 13px; margin: 0;">PHP, JavaScript, CSS, Database - Web application for searching and finding services</p>
+      </div>
+      <div style="margin-bottom: 12px;">
+        <h3 style="color: #1e293b; font-size: 16px; margin: 8px 0 3px 0;">Empowering Learner</h3>
+        <p style="color: #475569; font-size: 13px; margin: 0;">Educational project for Grade 4 students with interactive content</p>
+      </div>
+      <div style="margin-bottom: 12px;">
+        <h3 style="color: #1e293b; font-size: 16px; margin: 8px 0 3px 0;">Service Learning Research</h3>
+        <p style="color: #475569; font-size: 13px; margin: 0;">Research study on Service Learning methodologies in education</p>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 25px;">
+      <h2 style="color: #0b63d0; font-size: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">Achievements & Certifications</h2>
+      <p style="margin: 8px 0; color: #1e293b; font-size: 14px;">• Wadhani Spark Tank Certificate</p>
+      <p style="margin: 8px 0; color: #1e293b; font-size: 14px;">• Math Olympic Competition Winner</p>
+      <p style="margin: 8px 0; color: #1e293b; font-size: 14px;">• Spark Tank Program Completion</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #e2e8f0; color: #64748b; font-size: 12px;">
+      <p style="margin: 0;">Generated from Portfolio Website | © 2025 Hafiza Hydar Hinu</p>
     </div>
   </div>
 
