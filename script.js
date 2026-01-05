@@ -1,4 +1,4 @@
-/**
+**
  * Portfolio Website JavaScript
  * Enhanced with smooth scrolling, form validation, animations, and interactivity
  */
@@ -414,6 +414,96 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('load', function() {
   document.body.classList.add('loaded');
 });
+
+// ========================================
+// Download CV as PDF
+// ========================================
+function downloadCV(event) {
+  // Show loading state
+  let downloadBtn = null;
+  let originalText = '';
+  
+  if (event && event.target) {
+    downloadBtn = event.target.closest('button');
+    if (downloadBtn) {
+      originalText = downloadBtn.innerHTML;
+      downloadBtn.innerHTML = '<span>Downloading CV...</span>';
+      downloadBtn.disabled = true;
+    }
+  }
+
+  // Create a temporary anchor element to download the CV file
+  const cvFileName = 'CV(2202043).pdf';
+  const link = document.createElement('a');
+  link.href = cvFileName;
+  link.download = cvFileName;
+  link.style.display = 'none';
+  
+  // Append to body, click, and remove
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  
+  // Restore button state if button exists
+  if (downloadBtn) {
+    setTimeout(() => {
+      downloadBtn.innerHTML = originalText;
+      downloadBtn.disabled = false;
+    }, 500);
+  }
+  
+  // Show success message
+  showCVSuccessMessage();
+}
+
+// Show success message for CV download
+function showCVSuccessMessage() {
+  // Create a temporary success message
+  const successMsg = document.createElement('div');
+  successMsg.textContent = 'CV Downloaded Successfully! ✓';
+  successMsg.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #10b981;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    font-weight: 600;
+    animation: slideIn 0.3s ease-out;
+  `;
+  
+  // Add animation style if not exists
+  if (!document.getElementById('cv-success-animation')) {
+    const style = document.createElement('style');
+    style.id = 'cv-success-animation';
+    style.textContent = `
+      @keyframes slideIn {
+        from {
+          transform: translateX(400px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+  
+  document.body.appendChild(successMsg);
+  
+  // Remove message after 3 seconds
+  setTimeout(() => {
+    successMsg.style.animation = 'slideIn 0.3s ease-out reverse';
+    setTimeout(() => {
+      successMsg.remove();
+    }, 300);
+  }, 3000);
+}
 
 // ========================================
 // Console Welcome Message
